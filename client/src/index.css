@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Palette - Warning / Danger Theme */
+  --font-display: 'Anton', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Base Colors */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 10%;
+
+  /* Primary - Bold Warning Red */
+  --primary: 0 84% 60%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary - Stark White/Off-white for contrast */
+  --secondary: 0 0% 100%;
+  --secondary-foreground: 0 0% 10%;
+
+  /* Muted / Neutral */
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 40%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 84% 60%;
+
+  /* Traffic Light Colors */
+  --nutrition-low: 142 71% 45%;     /* Green */
+  --nutrition-moderate: 35 92% 50%; /* Amber */
+  --nutrition-high: 0 84% 60%;      /* Red */
+
+  /* UI Cards */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-wide uppercase;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  }
+  
+  .bg-grid-pattern {
+    background-image: radial-gradient(rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
